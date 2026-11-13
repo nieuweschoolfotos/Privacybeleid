@@ -1,39 +1,308 @@
 
-<div id="mobileAccess">
-    <a href="https://nieuweschoolfotos.github.io/fotos/"
-       class="btn">
-        📱 Ga naar de website →
-    </a>
-</div>
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<div id="desktopMessage" style="display:none;">
-    <div style="
-        background:#fff7ed;
-        border:1px solid #fed7aa;
-        padding:18px;
-        border-radius:13px;
-        color:#9a3412;
-        font-size:14px;
-        line-height:1.7;
-    ">
-        <strong>📱 Alleen toegankelijk via mobiel</strong>
-        <br>
-        Deze website is alleen beschikbaar op mobiele apparaten.
-        Open deze pagina op je smartphone of tablet.
-    </div>
-</div>
+    <title>Privacybeleid | Nieuwe School Foto's</title>
 
-<script>
-    function checkDevice() {
-        const isMobile = /Android|iPhone|iPad|iPod|Mobile/i
-            .test(navigator.userAgent);
+    <link rel="icon" type="image/png"
+    href="https://raw.githubusercontent.com/nieuweschoolfotos/Privacybeleid/main/favicon.png">
 
-        document.getElementById("mobileAccess").style.display =
-            isMobile ? "block" : "none";
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-        document.getElementById("desktopMessage").style.display =
-            isMobile ? "none" : "block";
-    }
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    checkDevice();
-</script>
+        body {
+            font-family: 'Inter', Arial, sans-serif;
+            background: linear-gradient(135deg, #eef2ff, #f5f3ff, #e0f2fe);
+            color: #334155;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 520px;
+            background: rgba(255,255,255,0.96);
+            padding: 38px 30px;
+            border-radius: 24px;
+            box-shadow: 0 20px 60px rgba(49,46,129,0.13);
+            text-align: center;
+            border: 1px solid white;
+            animation: appear 0.7s ease;
+        }
+
+        @keyframes appear {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .icon {
+            width: 85px;
+            height: 85px;
+            margin: 0 auto 22px;
+            background: linear-gradient(135deg,#2563eb,#7c3aed);
+            border-radius: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 38px;
+            box-shadow: 0 10px 25px rgba(79,70,229,.25);
+        }
+
+        .tag {
+            display: inline-block;
+            background: #eff6ff;
+            color: #2563eb;
+            padding: 8px 15px;
+            border-radius: 30px;
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+        }
+
+        h1 {
+            color: #172554;
+            font-size: 28px;
+            font-weight: 800;
+            margin-bottom: 14px;
+        }
+
+        .subtitle {
+            color: #64748b;
+            font-size: 14px;
+            line-height: 1.8;
+            margin-bottom: 25px;
+        }
+
+        .privacy-box {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 16px;
+            padding: 22px;
+            text-align: left;
+            margin-bottom: 20px;
+        }
+
+        .privacy-box p {
+            font-size: 13px;
+            line-height: 1.9;
+            color: #475569;
+        }
+
+        .privacy-box strong {
+            color: #1e40af;
+        }
+
+        .info {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: #f0fdf4;
+            border: 1px solid #dcfce7;
+            padding: 14px;
+            border-radius: 12px;
+            margin-bottom: 25px;
+            text-align: left;
+            font-size: 12px;
+            color: #166534;
+            line-height: 1.6;
+        }
+
+        .info span {
+            font-size: 25px;
+        }
+
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 16px;
+            background: linear-gradient(135deg,#2563eb,#7c3aed);
+            color: white;
+            text-decoration: none;
+            border-radius: 13px;
+            font-size: 15px;
+            font-weight: 700;
+            transition: all .3s ease;
+            box-shadow: 0 8px 20px rgba(79,70,229,.2);
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 25px rgba(79,70,229,.3);
+        }
+
+        .contact {
+            margin-top: 25px;
+            font-size: 13px;
+            color: #64748b;
+            line-height: 1.9;
+        }
+
+        .contact a {
+            color: #4f46e5;
+            text-decoration: none;
+            font-weight: 700;
+        }
+
+        .footer {
+            margin-top: 25px;
+            padding-top: 20px;
+            border-top: 1px solid #e2e8f0;
+            font-size: 11px;
+            color: #94a3b8;
+        }
+
+        #desktopMessage {
+            display: none;
+            background: #fff7ed;
+            border: 1px solid #fed7aa;
+            padding: 20px;
+            border-radius: 14px;
+            color: #9a3412;
+            font-size: 14px;
+            line-height: 1.8;
+            margin-top: 20px;
+        }
+
+        @media(max-width:480px) {
+            body {
+                padding: 15px;
+            }
+
+            .container {
+                padding: 30px 21px;
+            }
+
+            h1 {
+                font-size: 25px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <main class="container">
+
+        <div class="icon">🔒</div>
+
+        <div class="tag">
+            JOUW PRIVACY IS BELANGRIJK
+        </div>
+
+        <h1>Privacybeleid</h1>
+
+        <p class="subtitle">
+            Welkom! We vinden het belangrijk dat jouw privacy
+            en persoonlijke gegevens goed beschermd zijn.
+        </p>
+
+        <div class="privacy-box">
+            <p>
+                Alle foto's op onze website worden uitsluitend
+                door één persoon bekeken en bewerkt.
+                <br><br>
+
+                Tijdens je bezoek worden alleen de noodzakelijke
+                technische gegevens voor sitebeveiliging en de
+                berichten die je ons stuurt verzameld.
+                <br><br>
+
+                Deze gegevens worden nooit met anderen gedeeld
+                of verkocht.
+                <br><br>
+
+                Op de website kunnen cookies worden gebruikt om
+                je ervaring te verbeteren. Je kunt deze
+                desgewenst via je browser uitschakelen.
+            </p>
+        </div>
+
+        <div class="info">
+            <span>🛡️</span>
+            <div>
+                <strong>Veilig en zorgvuldig</strong><br>
+                We gaan zorgvuldig om met jouw gegevens.
+            </div>
+        </div>
+
+        <!-- MOBIELE TOEGANG -->
+        <div id="mobileAccess">
+            <a href="https://nieuweschoolfotos.github.io/fotos/"
+               class="btn">
+                📱 Ga naar de website →
+            </a>
+        </div>
+
+        <!-- DESKTOP BLOKKADE -->
+        <div id="desktopMessage">
+            <div style="font-size:35px;margin-bottom:10px;">
+                📱
+            </div>
+
+            <strong>Alleen toegankelijk via mobiel</strong>
+
+            <br><br>
+
+            Deze website is alleen beschikbaar op mobiele
+            apparaten. Open deze pagina op je smartphone
+            of tablet.
+        </div>
+
+        <div class="contact">
+            Vragen over ons privacybeleid?<br>
+            Neem gerust contact met ons op:<br>
+
+            <a href="mailto:nieuweschoolfotos@gmail.com">
+                nieuweschoolfotos@gmail.com
+            </a>
+        </div>
+
+        <div class="footer">
+            © 2026 Nieuwe School Foto's
+            <br>
+            Privacy & Veiligheid
+        </div>
+
+    </main>
+
+    <script>
+        function checkDevice() {
+
+            const userAgent = navigator.userAgent || "";
+
+            const isMobile =
+                /Android|iPhone|iPad|iPod|Mobile/i.test(userAgent);
+
+            document.getElementById("mobileAccess").style.display =
+                isMobile ? "block" : "none";
+
+            document.getElementById("desktopMessage").style.display =
+                isMobile ? "none" : "block";
+        }
+
+        checkDevice();
+    </script>
+
+</body>
+</html>
