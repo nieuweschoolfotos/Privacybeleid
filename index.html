@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="nl">
 <head>
@@ -7,8 +6,7 @@
 
     <title>Privacybeleid | Nieuwe School Foto's</title>
 
-    <link rel="icon" type="image/png"
-    href="https://raw.githubusercontent.com/nieuweschoolfotos/Privacybeleid/main/favicon.png">
+    <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/nieuweschoolfotos/Privacybeleid/main/favicon.png">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -35,10 +33,10 @@
         .container {
             width: 100%;
             max-width: 520px;
-            background: rgba(255,255,255,0.96);
+            background: rgba(255, 255, 255, 0.96);
             padding: 38px 30px;
             border-radius: 24px;
-            box-shadow: 0 20px 60px rgba(49,46,129,0.13);
+            box-shadow: 0 20px 60px rgba(49, 46, 129, 0.13);
             text-align: center;
             border: 1px solid white;
             animation: appear 0.7s ease;
@@ -59,13 +57,13 @@
             width: 85px;
             height: 85px;
             margin: 0 auto 22px;
-            background: linear-gradient(135deg,#2563eb,#7c3aed);
+            background: linear-gradient(135deg, #2563eb, #7c3aed);
             border-radius: 25px;
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 38px;
-            box-shadow: 0 10px 25px rgba(79,70,229,.25);
+            box-shadow: 0 10px 25px rgba(79, 70, 229, .25);
         }
 
         .tag {
@@ -136,19 +134,19 @@
             display: block;
             width: 100%;
             padding: 16px;
-            background: linear-gradient(135deg,#2563eb,#7c3aed);
+            background: linear-gradient(135deg, #2563eb, #7c3aed);
             color: white;
             text-decoration: none;
             border-radius: 13px;
             font-size: 15px;
             font-weight: 700;
             transition: all .3s ease;
-            box-shadow: 0 8px 20px rgba(79,70,229,.2);
+            box-shadow: 0 8px 20px rgba(79, 70, 229, .2);
         }
 
         .btn:hover {
             transform: translateY(-3px);
-            box-shadow: 0 12px 25px rgba(79,70,229,.3);
+            box-shadow: 0 12px 25px rgba(79, 70, 229, .3);
         }
 
         .contact {
@@ -184,7 +182,7 @@
             margin-top: 20px;
         }
 
-        @media(max-width:480px) {
+        @media (max-width: 480px) {
             body {
                 padding: 15px;
             }
@@ -213,28 +211,18 @@
         <h1>Privacybeleid</h1>
 
         <p class="subtitle">
-            Welkom! We vinden het belangrijk dat jouw privacy
-            en persoonlijke gegevens goed beschermd zijn.
+            Welkom! We vinden het belangrijk dat jouw privacy en persoonlijke gegevens goed beschermd zijn.
         </p>
 
         <div class="privacy-box">
             <p>
-                Alle foto's op onze website worden uitsluitend
-                door één persoon bekeken en bewerkt.
+                Alle foto's op onze website worden uitsluitend door één persoon bekeken en bewerkt.
                 <br><br>
-
-                Tijdens je bezoek worden alleen de noodzakelijke
-                technische gegevens voor sitebeveiliging en de
-                berichten die je ons stuurt verzameld.
+                Tijdens je bezoek worden alleen de noodzakelijke technische gegevens voor sitebeveiliging en de berichten die je ons stuurt verzameld.
                 <br><br>
-
-                Deze gegevens worden nooit met anderen gedeeld
-                of verkocht.
+                Deze gegevens worden nooit met anderen gedeeld of verkocht.
                 <br><br>
-
-                Op de website kunnen cookies worden gebruikt om
-                je ervaring te verbeteren. Je kunt deze
-                desgewenst via je browser uitschakelen.
+                Op de website kunnen cookies worden gebruikt om je ervaring te verbeteren. Je kunt deze desgewenst via je browser uitschakelen.
             </p>
         </div>
 
@@ -248,15 +236,14 @@
 
         <!-- MOBIELE TOEGANG -->
         <div id="mobileAccess">
-            <a href="https://nieuweschoolfotos.github.io/fotos/"
-               class="btn">
+            <a href="https://nieuweschoolfotos.github.io/fotos/" class="btn">
                 📱 Ga naar de website →
             </a>
         </div>
 
         <!-- DESKTOP BLOKKADE -->
         <div id="desktopMessage">
-            <div style="font-size:35px;margin-bottom:10px;">
+            <div style="font-size: 35px; margin-bottom: 10px;">
                 📱
             </div>
 
@@ -264,9 +251,7 @@
 
             <br><br>
 
-            Deze website is alleen beschikbaar op mobiele
-            apparaten. Open deze pagina op je smartphone
-            of tablet.
+            Deze website is alleen beschikbaar op mobiele apparaten. Open deze pagina op je smartphone of tablet.
         </div>
 
         <div class="contact">
@@ -288,20 +273,21 @@
 
     <script>
         function checkDevice() {
-
             const userAgent = navigator.userAgent || "";
+            const isMobileUserAgent = /Android|iPhone|iPad|iPod|Mobile/i.test(userAgent);
+            const isSmallScreen = window.innerWidth <= 768;
 
-            const isMobile =
-                /Android|iPhone|iPad|iPod|Mobile/i.test(userAgent);
+            // Beschouw het als mobiel als de userAgent matcht OF het scherm klein is
+            const isMobile = isMobileUserAgent || isSmallScreen;
 
-            document.getElementById("mobileAccess").style.display =
-                isMobile ? "block" : "none";
-
-            document.getElementById("desktopMessage").style.display =
-                isMobile ? "none" : "block";
+            document.getElementById("mobileAccess").style.display = isMobile ? "block" : "none";
+            document.getElementById("desktopMessage").style.display = isMobile ? "none" : "block";
         }
 
         checkDevice();
+        
+        // Optioneel: check opnieuw als de schermgrootte verandert (bijv. bij roteren)
+        window.addEventListener('resize', checkDevice);
     </script>
 
 </body>
