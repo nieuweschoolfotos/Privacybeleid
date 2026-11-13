@@ -1,76 +1,39 @@
-<!DOCTYPE html>
-<html lang="nl">
-<head>
 
-     <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/nieuweschoolfotos/Privacybeleid/main/favicon.png">
-    
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacybeleid</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            background-color: #f9f9f9;
-            color: #333;
-            margin: 0;
-            padding: 15px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            box-sizing: border-box;
-        }
-        .container {
-            width: 100%;
-            max-width: 500px;
-            background-color: #fff;
-            padding: 20px;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-            box-sizing: border-box;
-            text-align: center;
-        }
-        h1 {
-            color: #2c3e50;
-            font-size: 22px;
-            margin-top: 0;
-            border-bottom: 2px solid #eee;
-            padding-bottom: 10px;
-            text-align: left;
-        }
-        p {
-            margin-bottom: 20px;
-            font-size: 15px;
-            text-align: left;
-        }
-        .btn {
-            display: inline-block;
-            background-color: #0066cc;
-            color: #fff;
-            padding: 12px 20px;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 15px;
-            transition: background-color 0.2s;
-            width: 100%;
-            box-sizing: border-box;
-        }
-        .btn:hover {
-            background-color: #004999;
-        }
-    </style>
-</head>
-<body>
+<div id="mobileAccess">
+    <a href="https://nieuweschoolfotos.github.io/fotos/"
+       class="btn">
+        📱 Ga naar de website →
+    </a>
+</div>
 
-    <div class="container">
-        <h1>Privacybeleid</h1>
-        <p>Alle foto's op onze website worden uitsluitend door één persoon bekeken en bewerkt. Tijdens je bezoek worden alleen de noodzakelijke technische gegevens voor sitebeveiliging en de berichten die je ons stuurt verzameld. Deze gegevens worden nooit met anderen gedeeld of verkocht. Op de website kunnen cookies worden gebruikt om je ervaring te verbeteren, die je desgewenst via je browser kunt uitschakelen. Voor vragen kun je contact met ons opnemen via <strong>nieuweschoolfotos@gmail.com</strong>.</p>
-        
-        <a href="https://nieuweschoolfotos.github.io/fotos/" class="btn">ga naar de site</a>
+<div id="desktopMessage" style="display:none;">
+    <div style="
+        background:#fff7ed;
+        border:1px solid #fed7aa;
+        padding:18px;
+        border-radius:13px;
+        color:#9a3412;
+        font-size:14px;
+        line-height:1.7;
+    ">
+        <strong>📱 Alleen toegankelijk via mobiel</strong>
+        <br>
+        Deze website is alleen beschikbaar op mobiele apparaten.
+        Open deze pagina op je smartphone of tablet.
     </div>
+</div>
 
-</body>
-</html>
+<script>
+    function checkDevice() {
+        const isMobile = /Android|iPhone|iPad|iPod|Mobile/i
+            .test(navigator.userAgent);
+
+        document.getElementById("mobileAccess").style.display =
+            isMobile ? "block" : "none";
+
+        document.getElementById("desktopMessage").style.display =
+            isMobile ? "none" : "block";
+    }
+
+    checkDevice();
+</script>
